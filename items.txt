@@ -1,0 +1,16 @@
+urxvt + config
+vim
+amd drivers
+vscode
+	tokyo hack theme
+
+i3-config (upload to GH)
+	may not be worst idea to grab whole profile
+probably audio (alsa)
+
+Languages:
+	node
+	ruby
+	c++ utils
+
+

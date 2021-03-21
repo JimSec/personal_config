@@ -1,0 +1,9 @@
+- name: Apt installs 
+  apt:
+    state: latest
+    name:
+      - alsa-utils
+      - nethack-console
+      - netcat
+      - nmap
+      

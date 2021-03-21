@@ -1,0 +1,25 @@
+- name: Apt installs 
+  apt:
+    state: latest
+    name:
+      - i3-wm
+      - i3lock
+      - lightdm
+      - lightdm-gtk-greeter
+      - x11-common
+      - maim
+  become: yes
+- name: Priv files copies
+  cp: 
+    src: {{item.src}}
+    dest: {{item.dest}}
+  with_items:
+    - { src: 'etc-i3config' , dest: '/etc/i3/config' }
+    - { src: 'etc-i3status.conf' , dest: '/etc/i3status.conf' }
+    - { src: 'i3-sensible-terminal' , dest: '/usr/sbin/i3-sensible-terminal' }
+    - { src: 'lightdm.conf' , dest: '/etc/lightdm/lightdm.conf' }
+    - { src: 'lightdm-gtk-greeter.conf' , dest: '/etc/lightdm/lightdm-gtk-greeter.conf' }
+- name: User files copy
+  cp:
+    src: i3.config
+    dest: ~/.config/i3/config

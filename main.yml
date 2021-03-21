@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  roles:
+    - x_env
+    - term
+    - misc
+    #- ff
+    #- vscode

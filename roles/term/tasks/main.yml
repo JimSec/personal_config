@@ -1,0 +1,9 @@
+- name: Apt installs 
+  apt:
+    state: latest
+    name:
+      - urxvt
+- name: cp .XResources
+  cp:
+    src: .Xresources
+    dest: ~/.Xresources
