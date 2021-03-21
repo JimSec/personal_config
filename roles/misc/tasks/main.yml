@@ -6,4 +6,6 @@
       - nethack-console
       - netcat
       - nmap
+      - g++
+    update_cache: yes
       

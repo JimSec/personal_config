@@ -3,6 +3,7 @@
     state: latest
     name:
       - urxvt
+    update_cache: yes
 - name: cp .XResources
   cp:
     src: .Xresources
