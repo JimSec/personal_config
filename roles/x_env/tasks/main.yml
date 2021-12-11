@@ -1,3 +1,4 @@
+---
 - name: Apt installs 
   apt:
     state: latest
@@ -7,20 +8,24 @@
       - lightdm
       - lightdm-gtk-greeter
       - x11-common
+      - x11-xserver-utils
       - maim
     update_cache: yes
   become: yes
+
 - name: Priv files copies
-  cp: 
-    src: {{item.src}}
-    dest: {{item.dest}}
+  copy: 
+    src: "{{item.src}}"
+    dest: "{{item.dest}}"
   with_items:
     - { src: 'etc-i3config' , dest: '/etc/i3/config' }
     - { src: 'etc-i3status.conf' , dest: '/etc/i3status.conf' }
     - { src: 'i3-sensible-terminal' , dest: '/usr/sbin/i3-sensible-terminal' }
     - { src: 'lightdm.conf' , dest: '/etc/lightdm/lightdm.conf' }
     - { src: 'lightdm-gtk-greeter.conf' , dest: '/etc/lightdm/lightdm-gtk-greeter.conf' }
+
 - name: User files copy
-  cp:
+  copy:
     src: i3.config
     dest: ~/.config/i3/config
+  become_user: data
