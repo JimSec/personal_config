@@ -2,9 +2,9 @@
   apt:
     state: latest
     name:
-      - urxvt
+      - rxvt-unicode
     update_cache: yes
 - name: cp .XResources
-  cp:
+  copy:
     src: .Xresources
     dest: ~/.Xresources
