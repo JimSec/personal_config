@@ -8,4 +8,5 @@
       - nmap
       - g++
     update_cache: yes
-      
+  
+- name: copy backup scripts
