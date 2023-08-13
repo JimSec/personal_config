@@ -4,7 +4,14 @@
     name:
       - rxvt-unicode
     update_cache: yes
+
 - name: cp .XResources
   copy:
     src: .Xresources
     dest: ~/.Xresources
+
+- name: cp .bashrc
+  copy:
+    src: .bashrc
+    dest: ~/.bashrc
+
