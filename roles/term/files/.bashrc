@@ -116,8 +116,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias vscode='codium'
-alias gs="git status"
+alias vscode='codium';
+alias gs="git status";
+alias gm="(git checkout main || git checkout master) && git pull";
 alias tf="terraform"
-alias :q!="exit";
+alias :q="exit"
+alias :q!="exit"
 . "$HOME/.cargo/env"

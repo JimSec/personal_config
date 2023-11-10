@@ -2,11 +2,13 @@
   apt:
     state: latest
     name:
-      - alsa-utils
+      - curl
+      - ffmpeg
+      - pulseaudio
+      - pulsemixer
       - nethack-console
       - netcat
       - nmap
       - g++
     update_cache: yes
   
-- name: copy backup scripts
