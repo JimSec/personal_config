@@ -1,10 +1,10 @@
 - name: Grab Firefox dev tarball
   shell: 
-    cmd: wget "https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=linux64&lang=en-US" -O Firefox-dev.tar.bz2
+    cmd: wget "https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=linux64&lang=en-US" -O /tmp/Firefox-dev.tar.bz2
 
 - name: Untar in /opt
   shell:
-    cmd: tar xjf Firefox-dev.tar.bz2 -C /opt/
+    cmd: tar xjf /tmp/Firefox-dev.tar.bz2 -C /opt/
 
 - name: Softlink to ffd
   shell:
