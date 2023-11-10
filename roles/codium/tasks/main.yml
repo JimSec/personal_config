@@ -27,5 +27,5 @@
 
 - name: Install Codium extensions
   shell:
-    cmd: cat extensions.txt | xargs -n 1 codium --install-extension
+    cmd: cat ~/.config/VSCodium/extensions.txt | xargs -n 1 codium --install-extension
   become_user: "{{ user }}"
