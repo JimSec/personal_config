@@ -8,6 +8,7 @@
     state: latest
     name:
       - codium
+    update_cache: true
 
 - name: Move keybind pref
   file: 
