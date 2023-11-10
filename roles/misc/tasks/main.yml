@@ -12,6 +12,6 @@
       - g++
       - vim
       - netplan.io
-      - bzip2gs
+      - bzip2
     update_cache: true
   
