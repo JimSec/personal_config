@@ -10,5 +10,7 @@
       - netcat
       - nmap
       - g++
-    update_cache: yes
+      - vim
+      - netplan.io
+    update_cache: true
   

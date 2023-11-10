@@ -10,8 +10,8 @@
       - x11-common
       - x11-xserver-utils
       - maim
-    update_cache: yes
-  become: yes
+    update_cache: true
+  become: true
 
 - name: Priv files copies
   copy: 
@@ -20,6 +20,7 @@
   with_items:
     - { src: 'etc-i3config' , dest: '/etc/i3/config' }
     - { src: 'etc-i3status.conf' , dest: '/etc/i3status.conf' }
+    - { src: 'i3-sensible-terminal' , dest: '/usr/sbin/i3-sensible-terminal' }
     - { src: 'i3-sensible-terminal' , dest: '/usr/sbin/i3-sensible-terminal' }
     - { src: 'lightdm.conf' , dest: '/etc/lightdm/lightdm.conf' }
     - { src: 'lightdm-gtk-greeter.conf' , dest: '/etc/lightdm/lightdm-gtk-greeter.conf' }
@@ -31,7 +32,14 @@
   become_user: "{{ user }}"
 
 - name: User files copy
-  copy:
-    src: i3.config
-    dest: ~/.config/i3/config
+  copy: 
+    src: "{{item.src}}"
+    dest: "{{item.dest}}"
+  with_items:
+    - { src: 'i3.config' , dest: '~/.config/i3/config' }
+    - { src: 'workspace-1.json' , dest: '~/.config/i3/' }
+    - { src: 'workspace-2.json' , dest: '~/.config/i3/' }
+    - { src: 'workspace-3.json' , dest: '~/.config/i3/' }
+    - { src: 'workspace-4.json' , dest: '~/.config/i3/' }
+
   become_user: "{{ user }}"
