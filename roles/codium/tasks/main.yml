@@ -7,3 +7,23 @@
     state: latest
     name:
       - codium
+
+- name: Move keybind pref
+  file: 
+    path: ~/.config/VSCodium/
+    state: directory
+  become_user: "{{ user }}"
+
+- name: Codium user prefs copy
+  copy: 
+    src: "{{item.src}}"
+    dest: "{{item.dest}}"
+  with_items:
+    - { src: 'keybindings.json' , dest: '~/.config/VSCodium/' }
+    - { src: 'extensions.txt' , dest: '~/.config/VSCodium/' }
+  become_user: "{{ user }}"
+
+- name: Install Codium extensions
+  shell:
+    cmd: cat extensions.txt | xargs -n 1 codium --install-extension
+  become_user: "{{ user }}"

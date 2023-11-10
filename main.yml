@@ -1,9 +1,9 @@
 ---
 - hosts: localhost
-  become: yes
+  become: true
   roles:
     - x_env
     - term
     - misc
-    #- ff
-    #- codium
+    - ff
+    - codium

@@ -3,12 +3,19 @@
     state: latest
     name:
       - rxvt-unicode
-    update_cache: yes
+      - xfonts-terminus
+    update_cache: true
 
 - name: cp .XResources
-  copy:
-    src: .Xresources
-    dest: ~/.Xresources
+  copy: 
+    src: "{{item.src}}"
+    dest: "{{item.dest}}"
+  with_items:
+    - { src: '.Xresources' , dest: '~/.Xresources' }
+    - { src: '.bashrc' , dest: '~/.bashrc' }
+    - { src: '90s.xrs' , dest: '~/90s.xrs' }
+    - { src: 'Red.xrs' , dest: '~/Red.xrs' }
+    - { src: 'Daylight.xrs' , dest: '~/Daylight.xrs' }
   become_user: "{{ user }}"
 
 - name: cp .bashrc
