@@ -24,8 +24,13 @@
     - { src: 'lightdm.conf' , dest: '/etc/lightdm/lightdm.conf' }
     - { src: 'lightdm-gtk-greeter.conf' , dest: '/etc/lightdm/lightdm-gtk-greeter.conf' }
 
+- name: Create i3 config directory
+  file: 
+    path: ~/.config/i3/config
+  become_user: "{{ user }}"
+
 - name: User files copy
   copy:
     src: i3.config
     dest: ~/.config/i3/config
-  become_user: data
+  become_user: "{{ user }}"

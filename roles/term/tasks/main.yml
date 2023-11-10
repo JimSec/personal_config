@@ -9,9 +9,11 @@
   copy:
     src: .Xresources
     dest: ~/.Xresources
+  become_user: "{{ user }}"
 
 - name: cp .bashrc
   copy:
     src: .bashrc
     dest: ~/.bashrc
+  become_user: "{{ user }}"
 
