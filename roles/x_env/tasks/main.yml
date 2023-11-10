@@ -27,6 +27,7 @@
 - name: Create i3 config directory
   file: 
     path: ~/.config/i3/
+    state: directory
   become_user: "{{ user }}"
 
 - name: User files copy
