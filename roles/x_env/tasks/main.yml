@@ -37,6 +37,7 @@
     dest: "{{item.dest}}"
   with_items:
     - { src: 'i3.config' , dest: '~/.config/i3/config' }
+    - { src: 'fstart.sh' , dest: '~/' }
     - { src: 'workspace-1.json' , dest: '~/.config/i3/' }
     - { src: 'workspace-2.json' , dest: '~/.config/i3/' }
     - { src: 'workspace-3.json' , dest: '~/.config/i3/' }
